@@ -23,7 +23,7 @@ install(TARGETS mylib DESTINATION ./lib/)
 # Build python module that provides bindings to the library implot
 #########################################################################
 set(bound_library mylib)                 # The library for which we are building bindings
-set(python_native_module_name _mylib) # This is the native python module name (`_lg_implot`).
+set(python_native_module_name _mylib) # This is the native python module name
 set(python_wrapper_module_name mylib) # This is the python wrapper around the native module
 set(python_module_sources bindings/module.cpp bindings/pybind_${bound_library}.cpp) # native python module sources
 
