@@ -1,0 +1,6 @@
+_skbuild/
+**/*.egg-info/
+build
+venv/
+venv_mylib/
+__pycache__
