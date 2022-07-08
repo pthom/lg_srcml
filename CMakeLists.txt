@@ -18,6 +18,11 @@ target_include_directories(mylib PUBLIC ${mylib_dir})
 # The library shall install itself into lib/
 # Note: any sub shared library used by the bound C++ library should install its targets into the "lib/" subfolder
 install(TARGETS mylib DESTINATION ./lib/)
+# Under windows, auto __declspec(dllexport)
+if (WIN32)
+    set_target_properties(mylib PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+
 
 #########################################################################
 # Build python module that provides bindings to the library implot
