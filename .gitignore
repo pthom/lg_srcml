@@ -2,5 +2,7 @@ _skbuild/
 **/*.egg-info/
 build
 venv/
-venv_template/
+venv_srcml/
 __pycache__
+.idea/
+cmake-build-*/
