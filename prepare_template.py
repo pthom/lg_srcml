@@ -86,10 +86,11 @@ def do_replace(new_module_name: str) -> None:
 
 
 if __name__ == "__main__":
-    print(help_prepare)
-    new_module_name = input("Name of the new module: ")
-    answer = input("Are you sure (this cannot be undone). Type 'yes' to confirm: ")
-    if answer == "yes":
-        do_replace(new_module_name)
-    else:
-        print("Cancelled!")
+    do_replace("srcml")
+    # print(help_prepare)
+    # new_module_name = input("Name of the new module: ")
+    # answer = input("Are you sure (this cannot be undone). Type 'yes' to confirm: ")
+    # if answer == "yes":
+    #     do_replace(new_module_name)
+    # else:
+    #     print("Cancelled!")
