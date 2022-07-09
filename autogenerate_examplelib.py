@@ -4,16 +4,16 @@ import litgen
 
 
 THIS_DIR = os.path.dirname(__file__)
-CPP_HEADERS_DIR = THIS_DIR + "/external/mylib"
+CPP_HEADERS_DIR = THIS_DIR + "/external/examplelib"
 CPP_GENERATED_PYBIND_DIR = THIS_DIR + "/bindings"
 assert os.path.isdir(CPP_HEADERS_DIR)
 assert os.path.isdir(CPP_GENERATED_PYBIND_DIR)
 
 
 def autogenerate():
-    input_cpp_header = CPP_HEADERS_DIR + "/mylib.h"
-    output_cpp_pydef_file = CPP_GENERATED_PYBIND_DIR + "/pybind_mylib.cpp"
-    output_stub_pyi_file = CPP_GENERATED_PYBIND_DIR + "/mylib/__init__.pyi"
+    input_cpp_header = CPP_HEADERS_DIR + "/examplelib.h"
+    output_cpp_pydef_file = CPP_GENERATED_PYBIND_DIR + "/pybind_examplelib.cpp"
+    output_stub_pyi_file = CPP_GENERATED_PYBIND_DIR + "/examplelib/__init__.pyi"
 
     # Configure options
     options = litgen.LitgenOptions()

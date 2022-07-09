@@ -1,4 +1,4 @@
-#include "mylib.h"
+#include "examplelib.h"
 
 int add(int a, int b)
 {
