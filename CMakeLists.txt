@@ -12,12 +12,8 @@ add_subdirectory(external/pybind11)
 # Build mylib Bound C++ library
 ####################################################
 set(mylib_dir external/mylib)
-# The library shall be built as a shared library
-add_library(mylib SHARED ${mylib_dir}/mylib.cpp ${mylib_dir}/mylib.h)
+add_library(mylib ${mylib_dir}/mylib.cpp ${mylib_dir}/mylib.h)
 target_include_directories(mylib PUBLIC ${mylib_dir})
-# The library shall install itself into lib/
-# Note: any sub shared library used by the bound C++ library should install its targets into the "lib/" subfolder
-install(TARGETS mylib DESTINATION ./lib/)
 # Under windows, auto __declspec(dllexport)
 if (WIN32)
     set_target_properties(mylib PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
