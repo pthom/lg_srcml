@@ -9,23 +9,23 @@ set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(external/pybind11)
 
 ####################################################
-# Build examplelib Bound C++ library
+# Build srcml Bound C++ library
 ####################################################
-set(examplelib_dir external/examplelib)
-add_library(examplelib ${examplelib_dir}/examplelib.cpp ${examplelib_dir}/examplelib.h)
-target_include_directories(examplelib PUBLIC ${examplelib_dir})
+set(srcml_dir external/srcml)
+add_library(srcml ${srcml_dir}/srcml.cpp ${srcml_dir}/srcml.h)
+target_include_directories(srcml PUBLIC ${srcml_dir})
 # Under windows, auto __declspec(dllexport)
 if (WIN32)
-    set_target_properties(examplelib PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    set_target_properties(srcml PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
 
 #########################################################################
 # Build python module that provides bindings to the library implot
 #########################################################################
-set(bound_library examplelib)                 # The library for which we are building bindings
-set(python_native_module_name _examplelib) # This is the native python module name
-set(python_wrapper_module_name examplelib) # This is the python wrapper around the native module
+set(bound_library srcml)                 # The library for which we are building bindings
+set(python_native_module_name _srcml) # This is the native python module name
+set(python_wrapper_module_name srcml) # This is the python wrapper around the native module
 set(python_module_sources bindings/module.cpp bindings/pybind_${bound_library}.cpp) # native python module sources
 
 pybind11_add_module(${python_native_module_name} ${python_module_sources})

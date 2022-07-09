@@ -1,4 +1,4 @@
-#include "examplelib.h"
+#include "srcml.h"
 
 int add(int a, int b)
 {
