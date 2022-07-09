@@ -6,3 +6,5 @@ venv_srcml/
 __pycache__
 .idea/
 cmake-build-*/
+libarchive/
+xz/
